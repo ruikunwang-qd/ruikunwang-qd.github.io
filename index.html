@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="王瑞坤博士 - 计算机科学与技术系副教授，研究方向：机器学习、计算机视觉">
+    <meta name="description" content="王瑞坤博士 - 青岛科技大学副教授，研究方向：水下组网、网络优化、光网络管控、AI大模型">
     <title>王瑞坤 | Ruikun Wang - 副教授个人主页</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -24,7 +24,6 @@
             padding: 2rem 1.5rem;
         }
 
-        /* 主容器 - 双栏结构 */
         .academic-container {
             max-width: 1280px;
             margin: 0 auto;
@@ -32,16 +31,13 @@
             border-radius: 28px;
             box-shadow: 0 25px 45px -12px rgba(0,0,0,0.15);
             overflow: hidden;
-            transition: all 0.2s;
         }
 
-        /* 双栏 flex 布局 */
         .academic-grid {
             display: flex;
             flex-wrap: wrap;
         }
 
-        /* 左侧栏 (1/3) */
         .sidebar {
             flex: 1 1 30%;
             background: #fefcf7;
@@ -49,13 +45,11 @@
             border-right: 1px solid #e9eef3;
         }
 
-        /* 右侧内容 (2/3) */
         .main-content {
             flex: 2 1 60%;
             padding: 2rem 2rem 2.5rem;
         }
 
-        /* 语言切换条 (全宽) */
         .lang-bar {
             background: #ffffff;
             padding: 0.8rem 2rem;
@@ -82,7 +76,6 @@
             color: white;
         }
 
-        /* 头像区 */
         .avatar {
             text-align: center;
             margin-bottom: 1.5rem;
@@ -116,7 +109,6 @@
             padding-bottom: 0.5rem;
         }
 
-        /* 侧边栏 分组 */
         .info-group {
             margin: 1.8rem 0;
         }
@@ -156,7 +148,6 @@
             color: #1e4a76;
         }
 
-        /* 右侧板块样式 */
         .section {
             margin-bottom: 2rem;
         }
@@ -210,8 +201,6 @@
             font-size: 0.85rem;
             color: #3a5e7e;
         }
-
-        /* 项目 / 荣誉 卡片 */
         .honor-list {
             display: flex;
             flex-wrap: wrap;
@@ -268,112 +257,135 @@
         <button class="lang-btn" data-lang="en">🇬🇧 English</button>
     </div>
     <div class="academic-grid">
-        <!-- 左侧栏：个人信息 -->
+        <!-- 左侧栏 -->
         <div class="sidebar">
             <div class="avatar">
                 <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Profile Photo">
+                <!-- 建议替换为自己照片的URL -->
             </div>
             <h2 class="name" data-i18n="fullname">王瑞坤</h2>
             <div class="title-en" data-i18n="academic_title">副教授 | 硕士生导师</div>
 
             <div class="info-group">
                 <h3 data-i18n="contact">联系方式</h3>
-                <div class="contact-item"><i class="fas fa-envelope"></i> <span data-i18n="email_text">ruikun.wang@example.edu</span></div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">计算机学院，XX大学，北京</span></div>
-                <div class="contact-item"><i class="fas fa-graduation-cap"></i> <span data-i18n="office">信息楼 A401</span></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> <span data-i18n="email_text">ruikun.wang@qust.edu.cn</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i> <span data-i18n="phone">(+86) 18801152870</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">青岛科技大学 信息科学技术学院</span></div>
+                <div class="contact-item"><i class="fas fa-chalkboard"></i> <span data-i18n="office">山东省深海装备智联网重点实验室</span></div>
             </div>
 
             <div class="info-group">
-                <h3 data-i18n="research_interests_title">研究兴趣</h3>
-                <div class="interest-tags" data-i18n-list="research_tags">
-                    <span class="interest-tag">机器学习</span>
-                    <span class="interest-tag">计算机视觉</span>
-                    <span class="interest-tag">多模态学习</span>
-                    <span class="interest-tag">AI for Science</span>
+                <h3 data-i18n="research_interests_title">研究方向</h3>
+                <div class="interest-tags" id="interest-tags">
+                    <span class="interest-tag">水下组网</span>
+                    <span class="interest-tag">网络优化</span>
+                    <span class="interest-tag">光网络管控</span>
+                    <span class="interest-tag">AI大模型</span>
                 </div>
             </div>
 
             <div class="info-group">
-                <h3 data-i18n="honors_title">荣誉与奖项</h3>
+                <h3 data-i18n="honors_title">代表性荣誉</h3>
                 <div class="honor-list">
-                    <span class="honor-badge" data-i18n="honor1">🏆 青年拔尖人才</span>
-                    <span class="honor-badge" data-i18n="honor2">📖 校级优秀教师 (2023)</span>
-                    <span class="honor-badge" data-i18n="honor3">🏅 AI顶会杰出审稿人</span>
+                    <span class="honor-badge" data-i18n="honor1">🏆 首都前沿学术成果奖</span>
+                    <span class="honor-badge" data-i18n="honor2">📖 北邮优秀博士学位论文</span>
+                    <span class="honor-badge" data-i18n="honor3">🏅 ECOC最佳学生论文奖提名</span>
+                    <span class="honor-badge" data-i18n="honor4">💰 国家奖学金 (博士/本科)</span>
                 </div>
             </div>
 
             <div class="social-links">
-                <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://scholar.google.com/citations?user=cR1vOPwAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
                 <a href="https://github.com/ruikunwang-qd" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.researchgate.net/" target="_blank"><i class="fab fa-researchgate"></i></a>
-                <a href="mailto:ruikun.wang@example.edu"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:ruikun.wang@qust.edu.cn"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
 
         <!-- 右侧主内容 -->
         <div class="main-content">
-            <!-- 简短简介 -->
             <div class="section">
                 <div class="section-title"><i class="fas fa-user-graduate"></i><span data-i18n="bio_title">个人简介</span></div>
                 <div class="bio-text" data-i18n="bio_content">
-                    王瑞坤博士，计算机科学与技术系副教授，硕士生导师。2018年于清华大学获得博士学位，2019-2021年在斯坦福大学从事博士后研究。主要研究方向为机器学习、计算机视觉及其在科学发现中的应用。在TPAMI、CVPR、ICCV等顶级期刊与会议发表论文30余篇，主持国家自然科学基金青年项目、面上项目各1项。
+                    王瑞坤，博士，青岛科技大学信息科学技术学院副教授（五级），硕士生导师，山东省深海装备智联网重点实验室核心成员（王景景教授团队）。1996年12月生，中共党员。2024年于北京邮电大学获博士学位（信息与通信工程，A+学科），期间受国家留学基金委资助在米兰理工大学联合培养（导师：Massimo Tornatore 教授，IEEE Fellow）。主要研究方向包括水下组网、网络优化、光网络管控及AI大模型。累计发表学术论文30余篇（含JSAC、COMMAG、JOCN等顶刊及OFC、ECOC、SIGCOMM顶会），主持国家自然科学基金青年项目、青岛市自然科学基金青年项目等。担任《Photonics》客座编辑、《西安邮电大学学报》等多家期刊青年编委。
                 </div>
             </div>
 
-            <!-- 教育背景 -->
             <div class="section">
                 <div class="section-title"><i class="fas fa-university"></i><span data-i18n="edu_title">教育背景</span></div>
                 <div class="education-item">
-                    <div class="course-name" data-i18n="edu1_title">博士 | 计算机科学与技术</div>
-                    <div class="course-desc" data-i18n="edu1_desc">清华大学，2013 – 2018</div>
+                    <div class="course-name" data-i18n="edu1_title">博士 | 信息与通信工程</div>
+                    <div class="course-desc" data-i18n="edu1_desc">北京邮电大学，2019 – 2024 (硕博连读) | 导师：纪越峰教授、张佳玮教授</div>
                 </div>
                 <div class="education-item">
-                    <div class="course-name" data-i18n="edu2_title">学士 | 计算机科学与技术</div>
-                    <div class="course-desc" data-i18n="edu2_desc">南京大学，2009 – 2013</div>
+                    <div class="course-name" data-i18n="edu2_title">联合培养博士 | 光网络机器学习</div>
+                    <div class="course-desc" data-i18n="edu2_desc">米兰理工大学 (意大利) ，2023 – 2024 | 国家留学基金委资助，导师：Massimo Tornatore 教授 (IEEE Fellow)</div>
+                </div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="edu3_title">学士 | 通信工程</div>
+                    <div class="course-desc" data-i18n="edu3_desc">青岛农业大学，2015 – 2019 | 专业排名 1/68，山东省优秀毕业生</div>
                 </div>
             </div>
 
-            <!-- 代表性论文 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-briefcase"></i><span data-i18n="work_title">工作经历</span></div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="work1_title">副教授（五级）| 硕士生导师</div>
+                    <div class="course-desc" data-i18n="work1_desc">青岛科技大学 信息科学技术学院，2025.01 – 至今 | 山东省深海装备智联网重点实验室</div>
+                </div>
+            </div>
+
             <div class="section">
                 <div class="section-title"><i class="fas fa-file-alt"></i><span data-i18n="papers_title">代表性论文</span></div>
                 <div class="publication-item">
-                    <div class="pub-title" data-i18n="paper1_title">R. Wang, et al. "Contrastive Learning with Attention for Visual Recognition"</div>
-                    <div class="pub-venue" data-i18n="paper1_venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024</div>
+                    <div class="pub-title" data-i18n="paper1_title">R. Wang, et al. "Multi-Failure Localization in High-Degree ROADM-based Optical Networks using Rules-Informed Neural Networks"</div>
+                    <div class="pub-venue" data-i18n="paper1_venue">IEEE JSAC, vol.43, no.5, pp.1738-1754, 2025 (CCF A, 中科院一区Top, IF:17.2)</div>
                 </div>
                 <div class="publication-item">
-                    <div class="pub-title" data-i18n="paper2_title">R. Wang, J. Zhang, L. Chen. "Cross-modal Adaptation for Few-shot Learning"</div>
-                    <div class="pub-venue" data-i18n="paper2_venue">CVPR 2023 (Oral) <span class="pub-year">2023</span></div>
+                    <div class="pub-title" data-i18n="paper2_title">R. Wang, et al. "Failure Localization in Optical Networks: How Much Machine Learning do We Need?"</div>
+                    <div class="pub-venue" data-i18n="paper2_venue">IEEE Communications Magazine, 2026 (Early Access, IF:8.3)</div>
                 </div>
                 <div class="publication-item">
-                    <div class="pub-title" data-i18n="paper3_title">Wang R, Li Y, et al. "Efficient Transformer for Medical Image Segmentation"</div>
-                    <div class="pub-venue" data-i18n="paper3_venue">Medical Image Analysis (MedIA), 2022</div>
+                    <div class="pub-title" data-i18n="paper3_title">R. Wang, et al. "Meta-Learning-based Failure Localization with Digital-Twin-enabled Multi-Mirror Models"</div>
+                    <div class="pub-venue" data-i18n="paper3_venue">ECOC 2023 (光通信顶会，最佳学生论文奖提名，唯一华人一作)</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title" data-i18n="paper4_title">R. Wang, et al. "Network for AI: Communication-Efficient Federated Learning with MST-based Scheduling"</div>
+                    <div class="pub-venue" data-i18n="paper4_venue">OFC 2024 (光通信顶会，Oral)</div>
                 </div>
             </div>
 
-            <!-- 主讲课程 -->
             <div class="section">
-                <div class="section-title"><i class="fas fa-chalkboard-user"></i><span data-i18n="courses_title">主讲课程</span></div>
-                <div class="course-item">
-                    <div class="course-name" data-i18n="course1_name">机器学习（研究生）</div>
-                    <div class="course-desc" data-i18n="course1_desc">春季学期，面向硕博研究生，含理论推导与项目实践</div>
+                <div class="section-title"><i class="fas fa-flask"></i><span data-i18n="projects_title">主要科研项目</span></div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="proj1_title">国家自然科学基金青年项目（负责人）</div>
+                    <div class="course-desc" data-i18n="proj1_desc">高维度ROADM光网络的细粒度故障定位机制研究，2026-2028 (30万)</div>
                 </div>
-                <div class="course-item">
-                    <div class="course-name" data-i18n="course2_name">计算机视觉（本科生）</div>
-                    <div class="course-desc" data-i18n="course2_desc">秋季学期，校级精品课程，学生评教前10%</div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="proj2_title">青岛市自然科学基金青年项目（负责人）</div>
+                    <div class="course-desc" data-i18n="proj2_desc">高维度ROADM光网络中故障分析模型与定位技术研究，2025-2027 (10万)</div>
                 </div>
-                <div class="course-item">
-                    <div class="course-name" data-i18n="course3_name">深度学习基础</div>
-                    <div class="course-desc" data-i18n="course3_desc">春季学期，理论与实践结合，使用PyTorch</div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="proj3_title">国家重点研发计划（骨干/学生组长）</div>
+                    <div class="course-desc" data-i18n="proj3_desc">基于数据与模型协同驱动的智能传输网络（505万）/ 多模态全光交换网络（300万）</div>
                 </div>
             </div>
 
-            <!-- 学术服务 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-chalkboard-user"></i><span data-i18n="courses_title">讲授课程</span></div>
+                <div class="course-item">
+                    <div class="course-name" data-i18n="course1_name">Python程序设计 (本科生)</div>
+                    <div class="course-desc" data-i18n="course1_desc">理论24学时 + 上机16学时，2025年秋季学期</div>
+                </div>
+            </div>
+
             <div class="section">
                 <div class="section-title"><i class="fas fa-globe"></i><span data-i18n="service_title">学术服务</span></div>
                 <div class="bio-text" data-i18n="service_content">
-                    ● 国际会议程序委员：NeurIPS 2024, ICML 2025<br>
-                    ● 期刊审稿人：TPAMI, IJCV, Pattern Recognition<br>
-                    ● 中国计算机学会（CCF）高级会员，人工智能专委会委员
+                    ● 期刊编委/青年编委：《Photonics》客座编辑、《西安邮电大学学报》《江苏海洋大学学报》等青年编委<br>
+                    ● 国际会议共同主席：IEEE CCPQT 2025 Workshop、SMC-IoT 2025 Workshop<br>
+                    ● 审稿人：IEEE JSAC, TNET, COMMAG, JOCN, JLT, Optics Express, China Communications 等20余种期刊<br>
+                    ● 学术会员：CCF高级会员
                 </div>
             </div>
             <footer>
@@ -384,43 +396,54 @@
 </div>
 
 <script>
-    // 中英文翻译字典（学术版）
     const translations = {
         zh: {
             fullname: "王瑞坤",
             academic_title: "副教授 | 硕士生导师",
             contact: "联系方式",
-            email_text: "ruikun.wang@example.edu",
-            address: "计算机学院，XX大学，北京",
-            office: "信息楼 A401",
-            research_interests_title: "研究兴趣",
-            honors_title: "荣誉与奖项",
-            honor1: "🏆 青年拔尖人才",
-            honor2: "📖 校级优秀教师 (2023)",
-            honor3: "🏅 AI顶会杰出审稿人",
+            email_text: "ruikun.wang@qust.edu.cn",
+            phone: "(+86) 18801152870",
+            address: "青岛科技大学 信息科学技术学院",
+            office: "山东省深海装备智联网重点实验室",
+            research_interests_title: "研究方向",
+            honors_title: "代表性荣誉",
+            honor1: "🏆 首都前沿学术成果奖 (2025)",
+            honor2: "📖 北京邮电大学优秀博士学位论文 (2024)",
+            honor3: "🏅 ECOC 2023 最佳学生论文奖提名",
+            honor4: "💰 国家奖学金 (博士/本科)",
             bio_title: "个人简介",
-            bio_content: "王瑞坤博士，计算机科学与技术系副教授，硕士生导师。2018年于清华大学获得博士学位，2019-2021年在斯坦福大学从事博士后研究。主要研究方向为机器学习、计算机视觉及其在科学发现中的应用。在TPAMI、CVPR、ICCV等顶级期刊与会议发表论文30余篇，主持国家自然科学基金青年项目、面上项目各1项。",
+            bio_content: "王瑞坤，博士，青岛科技大学信息科学技术学院副教授（五级），硕士生导师，山东省深海装备智联网重点实验室核心成员（王景景教授团队）。1996年12月生，中共党员。2024年于北京邮电大学获博士学位（信息与通信工程，A+学科），期间受国家留学基金委资助在米兰理工大学联合培养（导师：Massimo Tornatore 教授，IEEE Fellow）。主要研究方向包括水下组网、网络优化、光网络管控及AI大模型。累计发表学术论文30余篇（含JSAC、COMMAG、JOCN等顶刊及OFC、ECOC、SIGCOMM顶会），主持国家自然科学基金青年项目、青岛市自然科学基金青年项目等。担任《Photonics》客座编辑、《西安邮电大学学报》等多家期刊青年编委。",
             edu_title: "教育背景",
-            edu1_title: "博士 | 计算机科学与技术",
-            edu1_desc: "清华大学，2013 – 2018",
-            edu2_title: "学士 | 计算机科学与技术",
-            edu2_desc: "南京大学，2009 – 2013",
+            edu1_title: "博士 | 信息与通信工程",
+            edu1_desc: "北京邮电大学，2019 – 2024 (硕博连读) | 导师：纪越峰教授、张佳玮教授",
+            edu2_title: "联合培养博士 | 光网络机器学习",
+            edu2_desc: "米兰理工大学 (意大利) ，2023 – 2024 | 国家留学基金委资助，导师：Massimo Tornatore 教授 (IEEE Fellow)",
+            edu3_title: "学士 | 通信工程",
+            edu3_desc: "青岛农业大学，2015 – 2019 | 专业排名 1/68，山东省优秀毕业生",
+            work_title: "工作经历",
+            work1_title: "副教授（五级）| 硕士生导师",
+            work1_desc: "青岛科技大学 信息科学技术学院，2025.01 – 至今 | 山东省深海装备智联网重点实验室",
             papers_title: "代表性论文",
-            paper1_title: "R. Wang, et al. \"Contrastive Learning with Attention for Visual Recognition\"",
-            paper1_venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024",
-            paper2_title: "R. Wang, J. Zhang, L. Chen. \"Cross-modal Adaptation for Few-shot Learning\"",
-            paper2_venue: "CVPR 2023 (Oral) 2023",
-            paper3_title: "Wang R, Li Y, et al. \"Efficient Transformer for Medical Image Segmentation\"",
-            paper3_venue: "Medical Image Analysis (MedIA), 2022",
-            courses_title: "主讲课程",
-            course1_name: "机器学习（研究生）",
-            course1_desc: "春季学期，面向硕博研究生，含理论推导与项目实践",
-            course2_name: "计算机视觉（本科生）",
-            course2_desc: "秋季学期，校级精品课程，学生评教前10%",
-            course3_name: "深度学习基础",
-            course3_desc: "春季学期，理论与实践结合，使用PyTorch",
+            paper1_title: "R. Wang, et al. \"Multi-Failure Localization in High-Degree ROADM-based Optical Networks using Rules-Informed Neural Networks\"",
+            paper1_venue: "IEEE JSAC, vol.43, no.5, pp.1738-1754, 2025 (CCF A, 中科院一区Top, IF:17.2)",
+            paper2_title: "R. Wang, et al. \"Failure Localization in Optical Networks: How Much Machine Learning do We Need?\"",
+            paper2_venue: "IEEE Communications Magazine, 2026 (Early Access, IF:8.3)",
+            paper3_title: "R. Wang, et al. \"Meta-Learning-based Failure Localization with Digital-Twin-enabled Multi-Mirror Models\"",
+            paper3_venue: "ECOC 2023 (光通信顶会，最佳学生论文奖提名，唯一华人一作)",
+            paper4_title: "R. Wang, et al. \"Network for AI: Communication-Efficient Federated Learning with MST-based Scheduling\"",
+            paper4_venue: "OFC 2024 (光通信顶会，Oral)",
+            projects_title: "主要科研项目",
+            proj1_title: "国家自然科学基金青年项目（负责人）",
+            proj1_desc: "高维度ROADM光网络的细粒度故障定位机制研究，2026-2028 (30万)",
+            proj2_title: "青岛市自然科学基金青年项目（负责人）",
+            proj2_desc: "高维度ROADM光网络中故障分析模型与定位技术研究，2025-2027 (10万)",
+            proj3_title: "国家重点研发计划（骨干/学生组长）",
+            proj3_desc: "基于数据与模型协同驱动的智能传输网络（505万）/ 多模态全光交换网络（300万）",
+            courses_title: "讲授课程",
+            course1_name: "Python程序设计 (本科生)",
+            course1_desc: "理论24学时 + 上机16学时，2025年秋季学期",
             service_title: "学术服务",
-            service_content: "● 国际会议程序委员：NeurIPS 2024, ICML 2025\n● 期刊审稿人：TPAMI, IJCV, Pattern Recognition\n● 中国计算机学会（CCF）高级会员，人工智能专委会委员",
+            service_content: "● 期刊编委/青年编委：《Photonics》客座编辑、《西安邮电大学学报》《江苏海洋大学学报》等青年编委\n● 国际会议共同主席：IEEE CCPQT 2025 Workshop、SMC-IoT 2025 Workshop\n● 审稿人：IEEE JSAC, TNET, COMMAG, JOCN, JLT, Optics Express, China Communications 等20余种期刊\n● 学术会员：CCF高级会员",
             footer_text: "© 2025 王瑞坤 | 最后更新 2026.05 | 基于 GitHub Pages 构建"
         },
         en: {
@@ -428,36 +451,48 @@
             academic_title: "Associate Professor | Master Supervisor",
             contact: "Contact",
             email_text: "ruikun.wang@qust.edu.cn",
-            address: "School of Computer Science, XX University, Beijing",
-            office: "Info Building A401",
+            phone: "(+86) 18801152870",
+            address: "School of Info. Sci. & Tech., Qingdao Univ. of Sci. & Tech.",
+            office: "Shandong Key Lab of Deep-sea Equipment IoN",
             research_interests_title: "Research Interests",
-            honors_title: "Honors & Awards",
-            honor1: "🏆 Young Top-notch Talent",
-            honor2: "📖 University Excellent Teacher (2023)",
-            honor3: "🏅 Outstanding Reviewer (CVPR/ICCV)",
+            honors_title: "Selected Honors",
+            honor1: "🏆 Beijing Frontier Academic Achievement Award (2025)",
+            honor2: "📖 Excellent Ph.D. Dissertation of BUPT (2024)",
+            honor3: "🏅 ECOC 2023 Best Student Paper Award Nominee",
+            honor4: "💰 National Scholarship (Ph.D. & Undergraduate)",
             bio_title: "Biography",
-            bio_content: "Dr. Ruikun Wang is an Associate Professor in the Department of Computer Science. He received his Ph.D. from Tsinghua University in 2018 and was a postdoctoral researcher at Stanford University (2019-2021). His research focuses on machine learning, computer vision, and AI for science. He has published over 30 papers in TPAMI, CVPR, ICCV, etc., and has been PI of NSFC projects.",
+            bio_content: "Dr. Ruikun Wang is an Associate Professor (Level V) at the School of Information Science and Technology, Qingdao University of Science and Technology (QUST), and a core member of Prof. Jingjing Wang's team at Shandong Key Laboratory of Deep-sea Equipment Internet of Networks. Born in Dec. 1996, he is a member of the Communist Party of China. He received his Ph.D. in Information and Communication Engineering from Beijing University of Posts and Telecommunications (BUPT) in 2024, where he was jointly trained at Politecnico di Milano (Italy) under CSC sponsorship (supervisor: Prof. Massimo Tornatore, IEEE Fellow). His research interests include underwater networking, network optimization, optical network control, and large AI models. He has published over 30 papers (incl. JSAC, COMMAG, JOCN, OFC, ECOC, SIGCOMM) and serves as PI of NSFC Youth Project and Qingdao NSFC Youth Project. He is a Guest Editor of Photonics and a Youth Editorial Board Member for several journals.",
             edu_title: "Education",
-            edu1_title: "Ph.D. in Computer Science",
-            edu1_desc: "Tsinghua University, 2013 – 2018",
-            edu2_title: "B.E. in Computer Science",
-            edu2_desc: "Nanjing University, 2009 – 2013",
+            edu1_title: "Ph.D. in Information & Communication Engineering",
+            edu1_desc: "Beijing Univ. of Posts & Telecom. (BUPT), 2019–2024 | Advisors: Prof. Yuefeng Ji & Prof. Jiawei Zhang",
+            edu2_title: "Joint Ph.D. in Optical Network ML",
+            edu2_desc: "Politecnico di Milano, Italy, 2023–2024 | CSC Fellow, Advisor: Prof. Massimo Tornatore (IEEE Fellow)",
+            edu3_title: "B.E. in Communication Engineering",
+            edu3_desc: "Qingdao Agricultural University, 2015–2019 | Rank 1/68, Outstanding Graduate of Shandong Province",
+            work_title: "Employment",
+            work1_title: "Associate Professor (Level V) | Master Supervisor",
+            work1_desc: "QUST, School of Information Science & Technology, Jan. 2025 – present | Shandong Key Lab of Deep-sea Equipment IoN",
             papers_title: "Selected Publications",
-            paper1_title: "R. Wang, et al. \"Contrastive Learning with Attention for Visual Recognition\"",
-            paper1_venue: "IEEE TPAMI, 2024",
-            paper2_title: "R. Wang, J. Zhang, L. Chen. \"Cross-modal Adaptation for Few-shot Learning\"",
-            paper2_venue: "CVPR 2023 (Oral)",
-            paper3_title: "Wang R, Li Y, et al. \"Efficient Transformer for Medical Image Segmentation\"",
-            paper3_venue: "Medical Image Analysis (MedIA), 2022",
+            paper1_title: "R. Wang, et al. \"Multi-Failure Localization in High-Degree ROADM-based Optical Networks using Rules-Informed Neural Networks\"",
+            paper1_venue: "IEEE JSAC, vol.43, no.5, pp.1738-1754, 2025 (CCF A, Top Tier, IF:17.2)",
+            paper2_title: "R. Wang, et al. \"Failure Localization in Optical Networks: How Much Machine Learning do We Need?\"",
+            paper2_venue: "IEEE Communications Magazine, 2026 (Early Access, IF:8.3)",
+            paper3_title: "R. Wang, et al. \"Meta-Learning-based Failure Localization with Digital-Twin-enabled Multi-Mirror Models\"",
+            paper3_venue: "ECOC 2023 (Top conf., Best Student Paper Award Nominee, sole first author from China)",
+            paper4_title: "R. Wang, et al. \"Network for AI: Communication-Efficient Federated Learning with MST-based Scheduling\"",
+            paper4_venue: "OFC 2024 (Top conf., Oral)",
+            projects_title: "Research Projects",
+            proj1_title: "NSFC Youth Project (PI)",
+            proj1_desc: "Fine-grained Failure Localization in High-degree ROADM Optical Networks, 2026-2028 (300k RMB)",
+            proj2_title: "Qingdao NSFC Youth Project (PI)",
+            proj2_desc: "Failure Analysis & Localization in High-degree ROADM Networks, 2025-2027 (100k RMB)",
+            proj3_title: "National Key R&D Program (Core Member / Student Leader)",
+            proj3_desc: "Data-Model-Driven Intelligent Transport Networks (5.05M RMB) / All-Optical Switching Networks (3M RMB)",
             courses_title: "Teaching",
-            course1_name: "Machine Learning (Graduate)",
-            course1_desc: "Spring semester, theory & projects for Master/PhD students",
-            course2_name: "Computer Vision (Undergraduate)",
-            course2_desc: "Fall semester, university-level excellent course",
-            course3_name: "Deep Learning Foundations",
-            course3_desc: "Spring semester, hands-on with PyTorch",
+            course1_name: "Python Programming (Undergraduate)",
+            course1_desc: "24h lecture + 16h lab, Fall 2025",
             service_title: "Academic Service",
-            service_content: "● Program Committee: NeurIPS 2024, ICML 2025\n● Reviewer: TPAMI, IJCV, Pattern Recognition\n● Senior Member of CCF, Member of CAAI",
+            service_content: "● Editorial Roles: Guest Editor of Photonics; Youth Editorial Board of J. of Xian Univ. of Posts & Telecom., etc.\n● Conference Co-Chair: IEEE CCPQT 2025 Workshop, SMC-IoT 2025 Workshop\n● Reviewer for: IEEE JSAC, TNET, COMMAG, JOCN, JLT, Opt. Express, China Communications, and more.\n● Professional Member: Senior Member of CCF",
             footer_text: "© 2025 Ruikun Wang | Last updated May 2026 | Powered by GitHub Pages"
         }
     };
@@ -468,28 +503,19 @@
         if (!translations[lang]) return;
         currentLang = lang;
         localStorage.setItem('preferredLang', lang);
-        // 更新所有data-i18n元素
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
-                if (el.innerText !== undefined) {
-                    el.innerText = translations[lang][key];
-                } else {
-                    el.textContent = translations[lang][key];
-                }
+                if (el.innerText !== undefined) el.innerText = translations[lang][key];
+                else el.textContent = translations[lang][key];
             }
         });
-        // 处理研究兴趣标签（特殊列表）
+        // 更新研究兴趣标签
+        const tagContainer = document.getElementById('interest-tags');
         if (lang === 'zh') {
-            const tagContainer = document.querySelector('.interest-tags');
-            if (tagContainer) {
-                tagContainer.innerHTML = `<span class="interest-tag">机器学习</span><span class="interest-tag">计算机视觉</span><span class="interest-tag">多模态学习</span><span class="interest-tag">AI for Science</span>`;
-            }
+            tagContainer.innerHTML = `<span class="interest-tag">水下组网</span><span class="interest-tag">网络优化</span><span class="interest-tag">光网络管控</span><span class="interest-tag">AI大模型</span>`;
         } else {
-            const tagContainer = document.querySelector('.interest-tags');
-            if (tagContainer) {
-                tagContainer.innerHTML = `<span class="interest-tag">Machine Learning</span><span class="interest-tag">Computer Vision</span><span class="interest-tag">Multimodal Learning</span><span class="interest-tag">AI for Science</span>`;
-            }
+            tagContainer.innerHTML = `<span class="interest-tag">Underwater Networking</span><span class="interest-tag">Network Optimization</span><span class="interest-tag">Optical Network Control</span><span class="interest-tag">Large AI Models</span>`;
         }
         document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
         document.querySelectorAll('.lang-btn').forEach(btn => {
