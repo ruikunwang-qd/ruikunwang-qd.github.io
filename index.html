@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>李明 | Li Ming - 个人主页</title>
-    <!-- Font Awesome 6 (免费图标库) -->
+    <meta name="description" content="王瑞坤博士 - 计算机科学与技术系副教授，研究方向：机器学习、计算机视觉">
+    <title>王瑞坤 | Ruikun Wang - 副教授个人主页</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: 学术风格 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,88 +17,98 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
-            color: #1e2a3e;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
         }
 
-        .container {
-            max-width: 1000px;
+        /* 主容器 - 双栏结构 */
+        .academic-container {
+            max-width: 1280px;
             margin: 0 auto;
             background: white;
-            border-radius: 32px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            border-radius: 28px;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.15);
             overflow: hidden;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
 
-        /* 语言切换栏 */
+        /* 双栏 flex 布局 */
+        .academic-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 左侧栏 (1/3) */
+        .sidebar {
+            flex: 1 1 30%;
+            background: #fefcf7;
+            padding: 2rem 1.8rem;
+            border-right: 1px solid #e9eef3;
+        }
+
+        /* 右侧内容 (2/3) */
+        .main-content {
+            flex: 2 1 60%;
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        /* 语言切换条 (全宽) */
         .lang-bar {
-            background: #ffffffdd;
-            backdrop-filter: blur(4px);
+            background: #ffffff;
             padding: 0.8rem 2rem;
             text-align: right;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e9eef3;
         }
 
         .lang-btn {
             background: none;
             border: 1px solid #cbd5e1;
-            padding: 0.4rem 1rem;
-            margin: 0 0.3rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
+            padding: 0.3rem 1rem;
+            margin-left: 0.6rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
             cursor: pointer;
             transition: 0.2s;
-            color: #2c3e66;
-            font-weight: 500;
+            color: #334155;
         }
 
         .lang-btn.active {
-            background: #2c3e66;
-            border-color: #2c3e66;
+            background: #1e3a5f;
+            border-color: #1e3a5f;
             color: white;
         }
 
-        .lang-btn:hover:not(.active) {
-            background: #eef2ff;
-            border-color: #94a3b8;
-        }
-
-        /* 主体内容 */
-        .content {
-            padding: 2rem 2rem 3rem;
-        }
-
+        /* 头像区 */
         .avatar {
             text-align: center;
             margin-bottom: 1.5rem;
         }
-
         .avatar img {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
-
-        h1 {
-            font-size: 2.5rem;
+        h2.name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
             text-align: center;
-            margin-bottom: 0.5rem;
-            color: #0f172a;
+            font-weight: 600;
+            margin: 0.5rem 0 0.2rem;
+            color: #0f2b3d;
         }
-
-        .tagline {
+        .title-en {
             text-align: center;
-            font-size: 1.2rem;
-            color: #4b5563;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.9rem;
+            color: #4b6a8b;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
             display: inline-block;
             width: auto;
             margin-left: auto;
@@ -103,242 +116,362 @@
             padding-bottom: 0.5rem;
         }
 
-        .section {
-            margin: 2.5rem 0;
+        /* 侧边栏 分组 */
+        .info-group {
+            margin: 1.8rem 0;
+        }
+        .info-group h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #1e3a5f;
+            border-left: 3px solid #a0c1e3;
+            padding-left: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+            color: #2c3e66;
+            word-break: break-all;
+        }
+        .contact-item i {
+            width: 1.4rem;
+            color: #3a6b9b;
+        }
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .interest-tag {
+            background: #eef3fc;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #1e4a76;
         }
 
+        /* 右侧板块样式 */
+        .section {
+            margin-bottom: 2rem;
+        }
         .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e2f41;
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            color: #0f172a;
-            border-left: 5px solid #3b82f6;
-            padding-left: 1rem;
-        }
-
-        .section-title i {
-            color: #3b82f6;
-            font-size: 1.6rem;
-        }
-
-        .about-text {
-            background: #f8fafc;
-            padding: 1.2rem 1.8rem;
-            border-radius: 24px;
-            font-size: 1.05rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .project-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 1.2rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
-            border-color: #cbd5e1;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-        }
-
-        .project-desc {
-            color: #475569;
+            border-bottom: 2px solid #e2edf7;
+            padding-bottom: 0.4rem;
             margin-bottom: 1rem;
+        }
+        .section-title i {
+            color: #2c6e9e;
+            font-size: 1.3rem;
+        }
+        .bio-text {
+            background: #f9fcff;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border-left: 3px solid #a0c1e3;
+        }
+        .education-item, .publication-item, .course-item {
+            margin-bottom: 1rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #cbdde9;
+        }
+        .pub-title {
+            font-weight: 600;
             font-size: 0.95rem;
         }
-
-        .project-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
+        .pub-venue {
+            font-size: 0.85rem;
+            color: #4b6a8b;
+            font-style: italic;
+        }
+        .pub-year {
+            font-size: 0.8rem;
+            color: #6b8cae;
+            margin-left: 0.5rem;
+        }
+        .course-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .course-desc {
+            font-size: 0.85rem;
+            color: #3a5e7e;
         }
 
-        .social-links {
+        /* 项目 / 荣誉 卡片 */
+        .honor-list {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
             flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
         }
-
-        .social-links a {
-            color: #334155;
-            font-size: 1.7rem;
-            transition: color 0.2s, transform 0.1s;
-            display: inline-block;
-        }
-
-        .social-links a:hover {
-            color: #3b82f6;
-            transform: scale(1.1);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-            color: #64748b;
+        .honor-badge {
+            background: #eef3fc;
+            border-radius: 30px;
+            padding: 0.3rem 1rem;
             font-size: 0.85rem;
         }
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .social-links a {
+            color: #3a6b9b;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #1e3a5f;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #7f8c9a;
+            border-top: 1px solid #e9eef3;
+            padding-top: 1.2rem;
+        }
 
-        @media (max-width: 640px) {
-            .content {
-                padding: 1.5rem;
+        @media (max-width: 780px) {
+            .sidebar, .main-content {
+                flex: 1 1 100%;
+                border-right: none;
             }
-            h1 {
-                font-size: 2rem;
+            .sidebar {
+                border-bottom: 1px solid #e9eef3;
             }
-            .section-title {
-                font-size: 1.5rem;
+            body {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="container">
+<div class="academic-container">
     <div class="lang-bar">
         <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
         <button class="lang-btn" data-lang="en">🇬🇧 English</button>
     </div>
-    <div class="content">
-        <!-- 头像区域 （可替换图片链接）-->
-        <div class="avatar">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture" id="avatar-img">
-            <!-- 建议替换成自己的图片链接 -->
-        </div>
-
-        <!-- 可动态切换内容的区域，均使用 data-i18n 属性 -->
-        <h1 data-i18n="name">李明</h1>
-        <div style="text-align: center;">
-            <div class="tagline" data-i18n="title">全栈开发者 / 开源爱好者</div>
-        </div>
-
-        <!-- 关于部分 -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-user-astronaut"></i>
-                <span data-i18n="about_title">关于我</span>
+    <div class="academic-grid">
+        <!-- 左侧栏：个人信息 -->
+        <div class="sidebar">
+            <div class="avatar">
+                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Profile Photo">
             </div>
-            <div class="about-text" data-i18n="about_content">
-                你好！我是李明，一名热爱技术的全栈工程师。拥有5年Web开发经验，喜欢构建优雅且实用的产品。业余时间贡献开源、写技术博客。
-            </div>
-        </div>
+            <h2 class="name" data-i18n="fullname">王瑞坤</h2>
+            <div class="title-en" data-i18n="academic_title">副教授 | 硕士生导师</div>
 
-        <!-- 项目部分 -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-code-branch"></i>
-                <span data-i18n="projects_title">精选项目</span>
+            <div class="info-group">
+                <h3 data-i18n="contact">联系方式</h3>
+                <div class="contact-item"><i class="fas fa-envelope"></i> <span data-i18n="email_text">ruikun.wang@example.edu</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">计算机学院，XX大学，北京</span></div>
+                <div class="contact-item"><i class="fas fa-graduation-cap"></i> <span data-i18n="office">信息楼 A401</span></div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-title" data-i18n="proj1_title">AI 图像工具箱</div>
-                    <div class="project-desc" data-i18n="proj1_desc">基于React和TensorFlow.js的在线图像处理工具，支持风格迁移、超分辨率。</div>
-                    <a href="#" class="project-link">GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="project-card">
-                    <div class="project-title" data-i18n="proj2_title">个人博客系统</div>
-                    <div class="project-desc" data-i18n="proj2_desc">全栈博客平台，Vue3 + Node.js + MongoDB，支持Markdown发布与评论。</div>
-                    <a href="#" class="project-link">GitHub <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="project-card">
-                    <div class="project-title" data-i18n="proj3_title">天气小助手</div>
-                    <div class="project-desc" data-i18n="proj3_desc">简约天气PWA应用，调用OpenWeatherMap API，支持全球城市搜索。</div>
-                    <a href="#" class="project-link">GitHub <i class="fas fa-arrow-right"></i></a>
+
+            <div class="info-group">
+                <h3 data-i18n="research_interests_title">研究兴趣</h3>
+                <div class="interest-tags" data-i18n-list="research_tags">
+                    <span class="interest-tag">机器学习</span>
+                    <span class="interest-tag">计算机视觉</span>
+                    <span class="interest-tag">多模态学习</span>
+                    <span class="interest-tag">AI for Science</span>
                 </div>
             </div>
-        </div>
 
-        <!-- 联系/社交 -->
-        <div class="section">
-            <div class="section-title">
-                <i class="fas fa-paper-plane"></i>
-                <span data-i18n="contact_title">联系我</span>
+            <div class="info-group">
+                <h3 data-i18n="honors_title">荣誉与奖项</h3>
+                <div class="honor-list">
+                    <span class="honor-badge" data-i18n="honor1">🏆 青年拔尖人才</span>
+                    <span class="honor-badge" data-i18n="honor2">📖 校级优秀教师 (2023)</span>
+                    <span class="honor-badge" data-i18n="honor3">🏅 AI顶会杰出审稿人</span>
+                </div>
             </div>
+
             <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:liming@example.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://github.com/ruikunwang-qd" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.researchgate.net/" target="_blank"><i class="fab fa-researchgate"></i></a>
+                <a href="mailto:ruikun.wang@example.edu"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
 
-        <footer>
-            <span data-i18n="footer_text">© 2025 李明 | 基于 GitHub Pages 构建</span>
-        </footer>
+        <!-- 右侧主内容 -->
+        <div class="main-content">
+            <!-- 简短简介 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-user-graduate"></i><span data-i18n="bio_title">个人简介</span></div>
+                <div class="bio-text" data-i18n="bio_content">
+                    王瑞坤博士，计算机科学与技术系副教授，硕士生导师。2018年于清华大学获得博士学位，2019-2021年在斯坦福大学从事博士后研究。主要研究方向为机器学习、计算机视觉及其在科学发现中的应用。在TPAMI、CVPR、ICCV等顶级期刊与会议发表论文30余篇，主持国家自然科学基金青年项目、面上项目各1项。
+                </div>
+            </div>
+
+            <!-- 教育背景 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-university"></i><span data-i18n="edu_title">教育背景</span></div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="edu1_title">博士 | 计算机科学与技术</div>
+                    <div class="course-desc" data-i18n="edu1_desc">清华大学，2013 – 2018</div>
+                </div>
+                <div class="education-item">
+                    <div class="course-name" data-i18n="edu2_title">学士 | 计算机科学与技术</div>
+                    <div class="course-desc" data-i18n="edu2_desc">南京大学，2009 – 2013</div>
+                </div>
+            </div>
+
+            <!-- 代表性论文 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-file-alt"></i><span data-i18n="papers_title">代表性论文</span></div>
+                <div class="publication-item">
+                    <div class="pub-title" data-i18n="paper1_title">R. Wang, et al. "Contrastive Learning with Attention for Visual Recognition"</div>
+                    <div class="pub-venue" data-i18n="paper1_venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024</div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title" data-i18n="paper2_title">R. Wang, J. Zhang, L. Chen. "Cross-modal Adaptation for Few-shot Learning"</div>
+                    <div class="pub-venue" data-i18n="paper2_venue">CVPR 2023 (Oral) <span class="pub-year">2023</span></div>
+                </div>
+                <div class="publication-item">
+                    <div class="pub-title" data-i18n="paper3_title">Wang R, Li Y, et al. "Efficient Transformer for Medical Image Segmentation"</div>
+                    <div class="pub-venue" data-i18n="paper3_venue">Medical Image Analysis (MedIA), 2022</div>
+                </div>
+            </div>
+
+            <!-- 主讲课程 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-chalkboard-user"></i><span data-i18n="courses_title">主讲课程</span></div>
+                <div class="course-item">
+                    <div class="course-name" data-i18n="course1_name">机器学习（研究生）</div>
+                    <div class="course-desc" data-i18n="course1_desc">春季学期，面向硕博研究生，含理论推导与项目实践</div>
+                </div>
+                <div class="course-item">
+                    <div class="course-name" data-i18n="course2_name">计算机视觉（本科生）</div>
+                    <div class="course-desc" data-i18n="course2_desc">秋季学期，校级精品课程，学生评教前10%</div>
+                </div>
+                <div class="course-item">
+                    <div class="course-name" data-i18n="course3_name">深度学习基础</div>
+                    <div class="course-desc" data-i18n="course3_desc">春季学期，理论与实践结合，使用PyTorch</div>
+                </div>
+            </div>
+
+            <!-- 学术服务 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-globe"></i><span data-i18n="service_title">学术服务</span></div>
+                <div class="bio-text" data-i18n="service_content">
+                    ● 国际会议程序委员：NeurIPS 2024, ICML 2025<br>
+                    ● 期刊审稿人：TPAMI, IJCV, Pattern Recognition<br>
+                    ● 中国计算机学会（CCF）高级会员，人工智能专委会委员
+                </div>
+            </div>
+            <footer>
+                <span data-i18n="footer_text">© 2025 王瑞坤 | 最后更新 2026.05 | 基于 GitHub Pages 构建</span>
+            </footer>
+        </div>
     </div>
 </div>
 
 <script>
-    // 双语词典
+    // 中英文翻译字典（学术版）
     const translations = {
         zh: {
-            name: "李明",
-            title: "全栈开发者 / 开源爱好者",
-            about_title: "关于我",
-            about_content: "你好！我是李明，一名热爱技术的全栈工程师。拥有5年Web开发经验，喜欢构建优雅且实用的产品。业余时间贡献开源、写技术博客。",
-            projects_title: "精选项目",
-            proj1_title: "AI 图像工具箱",
-            proj1_desc: "基于React和TensorFlow.js的在线图像处理工具，支持风格迁移、超分辨率。",
-            proj2_title: "个人博客系统",
-            proj2_desc: "全栈博客平台，Vue3 + Node.js + MongoDB，支持Markdown发布与评论。",
-            proj3_title: "天气小助手",
-            proj3_desc: "简约天气PWA应用，调用OpenWeatherMap API，支持全球城市搜索。",
-            contact_title: "联系我",
-            footer_text: "© 2025 李明 | 基于 GitHub Pages 构建"
+            fullname: "王瑞坤",
+            academic_title: "副教授 | 硕士生导师",
+            contact: "联系方式",
+            email_text: "ruikun.wang@example.edu",
+            address: "计算机学院，XX大学，北京",
+            office: "信息楼 A401",
+            research_interests_title: "研究兴趣",
+            honors_title: "荣誉与奖项",
+            honor1: "🏆 青年拔尖人才",
+            honor2: "📖 校级优秀教师 (2023)",
+            honor3: "🏅 AI顶会杰出审稿人",
+            bio_title: "个人简介",
+            bio_content: "王瑞坤博士，计算机科学与技术系副教授，硕士生导师。2018年于清华大学获得博士学位，2019-2021年在斯坦福大学从事博士后研究。主要研究方向为机器学习、计算机视觉及其在科学发现中的应用。在TPAMI、CVPR、ICCV等顶级期刊与会议发表论文30余篇，主持国家自然科学基金青年项目、面上项目各1项。",
+            edu_title: "教育背景",
+            edu1_title: "博士 | 计算机科学与技术",
+            edu1_desc: "清华大学，2013 – 2018",
+            edu2_title: "学士 | 计算机科学与技术",
+            edu2_desc: "南京大学，2009 – 2013",
+            papers_title: "代表性论文",
+            paper1_title: "R. Wang, et al. \"Contrastive Learning with Attention for Visual Recognition\"",
+            paper1_venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2024",
+            paper2_title: "R. Wang, J. Zhang, L. Chen. \"Cross-modal Adaptation for Few-shot Learning\"",
+            paper2_venue: "CVPR 2023 (Oral) 2023",
+            paper3_title: "Wang R, Li Y, et al. \"Efficient Transformer for Medical Image Segmentation\"",
+            paper3_venue: "Medical Image Analysis (MedIA), 2022",
+            courses_title: "主讲课程",
+            course1_name: "机器学习（研究生）",
+            course1_desc: "春季学期，面向硕博研究生，含理论推导与项目实践",
+            course2_name: "计算机视觉（本科生）",
+            course2_desc: "秋季学期，校级精品课程，学生评教前10%",
+            course3_name: "深度学习基础",
+            course3_desc: "春季学期，理论与实践结合，使用PyTorch",
+            service_title: "学术服务",
+            service_content: "● 国际会议程序委员：NeurIPS 2024, ICML 2025\n● 期刊审稿人：TPAMI, IJCV, Pattern Recognition\n● 中国计算机学会（CCF）高级会员，人工智能专委会委员",
+            footer_text: "© 2025 王瑞坤 | 最后更新 2026.05 | 基于 GitHub Pages 构建"
         },
         en: {
-            name: "Li Ming",
-            title: "Full-Stack Developer / Open Source Enthusiast",
-            about_title: "About Me",
-            about_content: "Hi! I'm Li Ming, a passionate full-stack engineer with 5 years of web development experience. I love building elegant and practical products. In my free time, I contribute to open source and write tech blogs.",
-            projects_title: "Featured Projects",
-            proj1_title: "AI Image Toolkit",
-            proj1_desc: "Online image processing tool based on React & TensorFlow.js, supporting style transfer & super-resolution.",
-            proj2_title: "Personal Blog System",
-            proj2_desc: "Full-stack blog platform (Vue3 + Node.js + MongoDB) with Markdown publishing and comments.",
-            proj3_title: "Weather Assistant",
-            proj3_desc: "Minimalist PWA weather app using OpenWeatherMap API, supports global city search.",
-            contact_title: "Contact Me",
-            footer_text: "© 2025 Li Ming | Built with GitHub Pages"
+            fullname: "Ruikun Wang",
+            academic_title: "Associate Professor | Master Supervisor",
+            contact: "Contact",
+            email_text: "ruikun.wang@example.edu",
+            address: "School of Computer Science, XX University, Beijing",
+            office: "Info Building A401",
+            research_interests_title: "Research Interests",
+            honors_title: "Honors & Awards",
+            honor1: "🏆 Young Top-notch Talent",
+            honor2: "📖 University Excellent Teacher (2023)",
+            honor3: "🏅 Outstanding Reviewer (CVPR/ICCV)",
+            bio_title: "Biography",
+            bio_content: "Dr. Ruikun Wang is an Associate Professor in the Department of Computer Science. He received his Ph.D. from Tsinghua University in 2018 and was a postdoctoral researcher at Stanford University (2019-2021). His research focuses on machine learning, computer vision, and AI for science. He has published over 30 papers in TPAMI, CVPR, ICCV, etc., and has been PI of NSFC projects.",
+            edu_title: "Education",
+            edu1_title: "Ph.D. in Computer Science",
+            edu1_desc: "Tsinghua University, 2013 – 2018",
+            edu2_title: "B.E. in Computer Science",
+            edu2_desc: "Nanjing University, 2009 – 2013",
+            papers_title: "Selected Publications",
+            paper1_title: "R. Wang, et al. \"Contrastive Learning with Attention for Visual Recognition\"",
+            paper1_venue: "IEEE TPAMI, 2024",
+            paper2_title: "R. Wang, J. Zhang, L. Chen. \"Cross-modal Adaptation for Few-shot Learning\"",
+            paper2_venue: "CVPR 2023 (Oral)",
+            paper3_title: "Wang R, Li Y, et al. \"Efficient Transformer for Medical Image Segmentation\"",
+            paper3_venue: "Medical Image Analysis (MedIA), 2022",
+            courses_title: "Teaching",
+            course1_name: "Machine Learning (Graduate)",
+            course1_desc: "Spring semester, theory & projects for Master/PhD students",
+            course2_name: "Computer Vision (Undergraduate)",
+            course2_desc: "Fall semester, university-level excellent course",
+            course3_name: "Deep Learning Foundations",
+            course3_desc: "Spring semester, hands-on with PyTorch",
+            service_title: "Academic Service",
+            service_content: "● Program Committee: NeurIPS 2024, ICML 2025\n● Reviewer: TPAMI, IJCV, Pattern Recognition\n● Senior Member of CCF, Member of CAAI",
+            footer_text: "© 2025 Ruikun Wang | Last updated May 2026 | Powered by GitHub Pages"
         }
     };
 
-    // 当前语言
     let currentLang = localStorage.getItem('preferredLang') || 'zh';
 
     function setLanguage(lang) {
         if (!translations[lang]) return;
         currentLang = lang;
         localStorage.setItem('preferredLang', lang);
-
-        // 更新所有带 data-i18n 属性的元素
+        // 更新所有data-i18n元素
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
-                // 如果是普通文本更新 innerText
                 if (el.innerText !== undefined) {
                     el.innerText = translations[lang][key];
                 } else {
@@ -346,35 +479,32 @@
                 }
             }
         });
-
-        // 更新页面HTML lang属性
-        document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
-
-        // 更新按钮激活样式
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
+        // 处理研究兴趣标签（特殊列表）
+        if (lang === 'zh') {
+            const tagContainer = document.querySelector('.interest-tags');
+            if (tagContainer) {
+                tagContainer.innerHTML = `<span class="interest-tag">机器学习</span><span class="interest-tag">计算机视觉</span><span class="interest-tag">多模态学习</span><span class="interest-tag">AI for Science</span>`;
             }
+        } else {
+            const tagContainer = document.querySelector('.interest-tags');
+            if (tagContainer) {
+                tagContainer.innerHTML = `<span class="interest-tag">Machine Learning</span><span class="interest-tag">Computer Vision</span><span class="interest-tag">Multimodal Learning</span><span class="interest-tag">AI for Science</span>`;
+            }
+        }
+        document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
+            else btn.classList.remove('active');
         });
     }
 
-    // 监听语言切换按钮
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const lang = btn.getAttribute('data-lang');
-            setLanguage(lang);
-        });
+        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
     });
 
-    // 初次加载，根据存储值或浏览器语言设置
     const browserLang = navigator.language.toLowerCase();
     let initLang = localStorage.getItem('preferredLang');
-    if (!initLang) {
-        if (browserLang.startsWith('zh')) initLang = 'zh';
-        else initLang = 'en';
-    }
+    if (!initLang) initLang = browserLang.startsWith('zh') ? 'zh' : 'en';
     setLanguage(initLang);
 </script>
 </body>
