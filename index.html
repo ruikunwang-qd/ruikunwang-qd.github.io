@@ -260,8 +260,9 @@
         <!-- 左侧栏 -->
         <div class="sidebar">
             <div class="avatar">
-                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Profile Photo">
-                <!-- 建议替换为自己照片的URL -->
+                <!-- 修改为本地图片 me.jpg -->
+                <img src="me.jpg" alt="Profile Photo" onerror="this.src='https://randomuser.me/api/portraits/men/85.jpg'">
+                <!-- 如果 me.jpg 加载失败，会自动回退到随机占位图，建议确保 me.jpg 存在于仓库根目录 -->
             </div>
             <h2 class="name" data-i18n="fullname">王瑞坤</h2>
             <div class="title-en" data-i18n="academic_title">副教授 | 硕士生导师</div>
