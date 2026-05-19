@@ -85,6 +85,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            object-position: 50% 30%;  /* 调整焦点，避免只显示额头 */
             border: 4px solid white;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
@@ -174,7 +175,7 @@
             font-size: 0.95rem;
             border-left: 3px solid #a0c1e3;
         }
-        .education-item, .publication-item, .course-item {
+        .education-item, .publication-item, .course-item, .award-item {
             margin-bottom: 1rem;
             padding-left: 0.8rem;
             border-left: 2px solid #cbdde9;
@@ -200,6 +201,14 @@
         .course-desc {
             font-size: 0.85rem;
             color: #3a5e7e;
+        }
+        .award-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .award-detail {
+            font-size: 0.85rem;
+            color: #4b6a8b;
         }
         .honor-list {
             display: flex;
@@ -260,9 +269,8 @@
         <!-- 左侧栏 -->
         <div class="sidebar">
             <div class="avatar">
-                <!-- 修改为本地图片 me.jpg -->
+                <!-- 使用本地照片 me.jpg，并调整了焦点 -->
                 <img src="me.jpg" alt="Profile Photo" onerror="this.src='https://randomuser.me/api/portraits/men/85.jpg'">
-                <!-- 如果 me.jpg 加载失败，会自动回退到随机占位图，建议确保 me.jpg 存在于仓库根目录 -->
             </div>
             <h2 class="name" data-i18n="fullname">王瑞坤</h2>
             <div class="title-en" data-i18n="academic_title">副教授 | 硕士生导师</div>
@@ -270,7 +278,7 @@
             <div class="info-group">
                 <h3 data-i18n="contact">联系方式</h3>
                 <div class="contact-item"><i class="fas fa-envelope"></i> <span data-i18n="email_text">ruikun.wang@qust.edu.cn</span></div>
-                <div class="contact-item"><i class="fas fa-phone"></i> <span data-i18n="phone">(+86) 18801152870</span></div>
+                <!-- 电话项已删除 -->
                 <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">青岛科技大学 信息科学技术学院</span></div>
                 <div class="contact-item"><i class="fas fa-chalkboard"></i> <span data-i18n="office">山东省深海装备智联网重点实验室</span></div>
             </div>
@@ -372,6 +380,43 @@
                 </div>
             </div>
 
+            <!-- 新增：获奖与荣誉板块（详细列表） -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-trophy"></i><span data-i18n="awards_title">获奖与荣誉</span></div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award1_name">🏆 首都前沿学术成果奖</div>
+                    <div class="award-detail" data-i18n="award1_detail">北京市科学技术学会，2025年 (排名 1/10)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award2_name">📖 北京邮电大学优秀博士学位论文</div>
+                    <div class="award-detail" data-i18n="award2_detail">北京邮电大学，2024年 (比例 <5%)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award3_name">💰 国家奖学金（博士）</div>
+                    <div class="award-detail" data-i18n="award3_detail">教育部，2024年 (比例 <6%)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award4_name">🏅 中国研究生人工智能创新大赛全国三等奖</div>
+                    <div class="award-detail" data-i18n="award4_detail">2024年 (作品：AI赋能的光网络故障实时分析与精准定位技术，排名1/4)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award5_name">📄 ACP 2024 最佳论文奖</div>
+                    <div class="award-detail" data-i18n="award5_detail">Asia Communications and Photonics Conference (ACP)组委会，2024年 (比例 <1%)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award6_name">✨ ECOC 2023 最佳学生论文奖提名</div>
+                    <div class="award-detail" data-i18n="award6_detail">欧洲光通信会议 (ECOC)，2023年 (每年仅5篇，唯一华人一作)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award7_name">📐 全国大学生数学竞赛国家一等奖</div>
+                    <div class="award-detail" data-i18n="award7_detail">2018年 (非数学专业)</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-name" data-i18n="award8_name">🎓 山东省优秀毕业生</div>
+                    <div class="award-detail" data-i18n="award8_detail">2019年 (本科)</div>
+                </div>
+            </div>
+
             <div class="section">
                 <div class="section-title"><i class="fas fa-chalkboard-user"></i><span data-i18n="courses_title">讲授课程</span></div>
                 <div class="course-item">
@@ -403,7 +448,6 @@
             academic_title: "副教授 | 硕士生导师",
             contact: "联系方式",
             email_text: "ruikun.wang@qust.edu.cn",
-            phone: "(+86) 18801152870",
             address: "青岛科技大学 信息科学技术学院",
             office: "山东省深海装备智联网重点实验室",
             research_interests_title: "研究方向",
@@ -440,6 +484,23 @@
             proj2_desc: "高维度ROADM光网络中故障分析模型与定位技术研究，2025-2027 (10万)",
             proj3_title: "国家重点研发计划（骨干/学生组长）",
             proj3_desc: "基于数据与模型协同驱动的智能传输网络（505万）/ 多模态全光交换网络（300万）",
+            awards_title: "获奖与荣誉",
+            award1_name: "🏆 首都前沿学术成果奖",
+            award1_detail: "北京市科学技术学会，2025年 (排名 1/10)",
+            award2_name: "📖 北京邮电大学优秀博士学位论文",
+            award2_detail: "北京邮电大学，2024年 (比例 <5%)",
+            award3_name: "💰 国家奖学金（博士）",
+            award3_detail: "教育部，2024年 (比例 <6%)",
+            award4_name: "🏅 中国研究生人工智能创新大赛全国三等奖",
+            award4_detail: "2024年 (作品：AI赋能的光网络故障实时分析与精准定位技术，排名1/4)",
+            award5_name: "📄 ACP 2024 最佳论文奖",
+            award5_detail: "Asia Communications and Photonics Conference (ACP)组委会，2024年 (比例 <1%)",
+            award6_name: "✨ ECOC 2023 最佳学生论文奖提名",
+            award6_detail: "欧洲光通信会议 (ECOC)，2023年 (每年仅5篇，唯一华人一作)",
+            award7_name: "📐 全国大学生数学竞赛国家一等奖",
+            award7_detail: "2018年 (非数学专业)",
+            award8_name: "🎓 山东省优秀毕业生",
+            award8_detail: "2019年 (本科)",
             courses_title: "讲授课程",
             course1_name: "Python程序设计 (本科生)",
             course1_desc: "理论24学时 + 上机16学时，2025年秋季学期",
@@ -452,7 +513,6 @@
             academic_title: "Associate Professor | Master Supervisor",
             contact: "Contact",
             email_text: "ruikun.wang@qust.edu.cn",
-            phone: "(+86) 18801152870",
             address: "School of Info. Sci. & Tech., Qingdao Univ. of Sci. & Tech.",
             office: "Shandong Key Lab of Deep-sea Equipment IoN",
             research_interests_title: "Research Interests",
@@ -489,6 +549,23 @@
             proj2_desc: "Failure Analysis & Localization in High-degree ROADM Networks, 2025-2027 (100k RMB)",
             proj3_title: "National Key R&D Program (Core Member / Student Leader)",
             proj3_desc: "Data-Model-Driven Intelligent Transport Networks (5.05M RMB) / All-Optical Switching Networks (3M RMB)",
+            awards_title: "Awards & Honors",
+            award1_name: "🏆 Beijing Frontier Academic Achievement Award",
+            award1_detail: "Beijing Association for Science and Technology, 2025 (Rank 1/10)",
+            award2_name: "📖 Excellent Ph.D. Dissertation of BUPT",
+            award2_detail: "Beijing University of Posts and Telecommunications, 2024 (Top 5%)",
+            award3_name: "💰 National Scholarship (Ph.D.)",
+            award3_detail: "Ministry of Education, 2024 (Top 6%)",
+            award4_name: "🏅 National AI Innovation Competition 3rd Prize",
+            award4_detail: "2024 (Project: AI-FON, Rank 1/4)",
+            award5_name: "📄 ACP 2024 Best Paper Award",
+            award5_detail: "Asia Communications and Photonics Conference, 2024 (Top 1%)",
+            award6_name: "✨ ECOC 2023 Best Student Paper Award Nominee",
+            award6_detail: "European Conference on Optical Communications, 2023 (Only 5 papers/year, sole first author from China)",
+            award7_name: "📐 National Mathematical Contest (1st Prize)",
+            award7_detail: "2018 (Non-mathematics major)",
+            award8_name: "🎓 Outstanding Graduate of Shandong Province",
+            award8_detail: "2019 (Undergraduate)",
             courses_title: "Teaching",
             course1_name: "Python Programming (Undergraduate)",
             course1_desc: "24h lecture + 16h lab, Fall 2025",
