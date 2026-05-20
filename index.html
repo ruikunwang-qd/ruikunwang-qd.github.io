@@ -85,7 +85,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: 50% 30%;  /* 调整焦点，避免只显示额头 */
+            object-position: 50% 30%;
             border: 4px solid white;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
@@ -189,11 +189,6 @@
             color: #4b6a8b;
             font-style: italic;
         }
-        .pub-year {
-            font-size: 0.8rem;
-            color: #6b8cae;
-            margin-left: 0.5rem;
-        }
         .course-name {
             font-weight: 600;
             font-size: 1rem;
@@ -266,10 +261,8 @@
         <button class="lang-btn" data-lang="en">🇬🇧 English</button>
     </div>
     <div class="academic-grid">
-        <!-- 左侧栏 -->
         <div class="sidebar">
             <div class="avatar">
-                <!-- 使用本地照片 me.jpg，并调整了焦点 -->
                 <img src="me.jpg" alt="Profile Photo" onerror="this.src='https://randomuser.me/api/portraits/men/85.jpg'">
             </div>
             <h2 class="name" data-i18n="fullname">王瑞坤</h2>
@@ -278,7 +271,6 @@
             <div class="info-group">
                 <h3 data-i18n="contact">联系方式</h3>
                 <div class="contact-item"><i class="fas fa-envelope"></i> <span data-i18n="email_text">ruikun.wang@qust.edu.cn</span></div>
-                <!-- 电话项已删除 -->
                 <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="address">青岛科技大学 信息科学技术学院</span></div>
                 <div class="contact-item"><i class="fas fa-chalkboard"></i> <span data-i18n="office">山东省深海装备智联网重点实验室</span></div>
             </div>
@@ -311,7 +303,6 @@
             </div>
         </div>
 
-        <!-- 右侧主内容 -->
         <div class="main-content">
             <div class="section">
                 <div class="section-title"><i class="fas fa-user-graduate"></i><span data-i18n="bio_title">个人简介</span></div>
@@ -380,7 +371,6 @@
                 </div>
             </div>
 
-            <!-- 新增：获奖与荣誉板块（详细列表） -->
             <div class="section">
                 <div class="section-title"><i class="fas fa-trophy"></i><span data-i18n="awards_title">获奖与荣誉</span></div>
                 <div class="award-item">
@@ -389,11 +379,11 @@
                 </div>
                 <div class="award-item">
                     <div class="award-name" data-i18n="award2_name">📖 北京邮电大学优秀博士学位论文</div>
-                    <div class="award-detail" data-i18n="award2_detail">北京邮电大学，2024年 (比例 <5%)</div>
+                    <div class="award-detail" data-i18n="award2_detail">北京邮电大学，2024年 (比例 &lt;5%)</div>
                 </div>
                 <div class="award-item">
                     <div class="award-name" data-i18n="award3_name">💰 国家奖学金（博士）</div>
-                    <div class="award-detail" data-i18n="award3_detail">教育部，2024年 (比例 <6%)</div>
+                    <div class="award-detail" data-i18n="award3_detail">教育部，2024年 (比例 &lt;6%)</div>
                 </div>
                 <div class="award-item">
                     <div class="award-name" data-i18n="award4_name">🏅 中国研究生人工智能创新大赛全国三等奖</div>
@@ -401,7 +391,7 @@
                 </div>
                 <div class="award-item">
                     <div class="award-name" data-i18n="award5_name">📄 ACP 2024 最佳论文奖</div>
-                    <div class="award-detail" data-i18n="award5_detail">Asia Communications and Photonics Conference (ACP)组委会，2024年 (比例 <1%)</div>
+                    <div class="award-detail" data-i18n="award5_detail">Asia Communications and Photonics Conference (ACP)组委会，2024年 (比例 &lt;1%)</div>
                 </div>
                 <div class="award-item">
                     <div class="award-name" data-i18n="award6_name">✨ ECOC 2023 最佳学生论文奖提名</div>
@@ -532,7 +522,7 @@
             edu3_desc: "Qingdao Agricultural University, 2015–2019 | Rank 1/68, Outstanding Graduate of Shandong Province",
             work_title: "Employment",
             work1_title: "Associate Professor | Master Supervisor",
-            work1_desc: "College of Information and Technology, Qingdao University of Science and Technology, Jan. 2025 – present,
+            work1_desc: "Qingdao University of Science and Technology, Jan. 2025 – present | Shandong Key Lab of Deep-sea Equipment IoN",
             papers_title: "Selected Publications",
             paper1_title: "R. Wang, et al. \"Multi-Failure Localization in High-Degree ROADM-based Optical Networks using Rules-Informed Neural Networks\"",
             paper1_venue: "IEEE JSAC, vol.43, no.5, pp.1738-1754, 2025 (CCF A, Top Tier, IF:17.2)",
@@ -577,39 +567,4 @@
 
     let currentLang = localStorage.getItem('preferredLang') || 'zh';
 
-    function setLanguage(lang) {
-        if (!translations[lang]) return;
-        currentLang = lang;
-        localStorage.setItem('preferredLang', lang);
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-                if (el.innerText !== undefined) el.innerText = translations[lang][key];
-                else el.textContent = translations[lang][key];
-            }
-        });
-        // 更新研究兴趣标签
-        const tagContainer = document.getElementById('interest-tags');
-        if (lang === 'zh') {
-            tagContainer.innerHTML = `<span class="interest-tag">水下组网</span><span class="interest-tag">网络优化</span><span class="interest-tag">光网络管控</span><span class="interest-tag">AI大模型</span>`;
-        } else {
-            tagContainer.innerHTML = `<span class="interest-tag">Underwater Networking</span><span class="interest-tag">Network Optimization</span><span class="interest-tag">Optical Network Control</span><span class="interest-tag">Large AI Models</span>`;
-        }
-        document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
-            else btn.classList.remove('active');
-        });
-    }
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
-    });
-
-    const browserLang = navigator.language.toLowerCase();
-    let initLang = localStorage.getItem('preferredLang');
-    if (!initLang) initLang = browserLang.startsWith('zh') ? 'zh' : 'en';
-    setLanguage(initLang);
-</script>
-</body>
-</html>
+   
